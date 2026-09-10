@@ -6,7 +6,10 @@ import { TopSearchSection } from "@/components/home/sections/TopSearchSection";
 import { Header } from "@/components/layout/Header";
 import { LocationSearchOverlay } from "@/components/overlays/SearchOverlay/LocationSearchOverlay";
 import { LoginModal } from "@/components/overlays/LoginDialog/LoginModal";
-import { PromoCarousel } from "./PromoCarousel";
+import { PromoCarousel } from "./sections/PromoCarousel";
+import { ManagedKosInfoCard } from "./sections/ManagedKosInfoCard";
+import { SurveyCtaSection } from "./sections/SurveyCTASection";
+import { OwnerPromotionSection } from "./sections/OwnerPromotionSection";
 
 export function HomeClient() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
@@ -21,11 +24,19 @@ export function HomeClient() {
           onOpenSearch={() => setIsSearchOpen(true)}
         />
 
-         <PromoCarousel />
+        <PromoCarousel />
+
+        <OwnerPromotionSection />
+
+        <SurveyCtaSection
+          onOpenSearch={() => setIsSearchOpen(true)}
+        />
+
+        <ManagedKosInfoCard />
 
         <section className="border-t border-border bg-secondary py-16">
           <div className="mx-auto max-w-[1120px] px-4 text-sm text-muted-foreground sm:px-6 lg:px-8">
-            Section berikutnya akan ditambahkan di bawah Promo Carousel.
+            Section property listing akan ditambahkan di bawah Managed Kos card.
           </div>
         </section>
       </main>

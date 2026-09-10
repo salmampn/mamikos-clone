@@ -91,7 +91,7 @@ export function PromoCarousel() {
       <Container className="max-w-none px-0">
         <div
           ref={emblaRef}
-          className="mx-auto w-full max-w-[1440px] overflow-hidden px-4 sm:px-6 lg:px-8"
+          className="mx-auto w-full max-w-7xl overflow-hidden px-4 sm:px-6 lg:px-8"
         >
           <div className="-ml-4 flex touch-pan-y sm:-ml-6 lg:-ml-8">
             {promoItems.map((promo) => (
