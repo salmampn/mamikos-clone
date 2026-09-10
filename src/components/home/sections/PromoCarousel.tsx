@@ -38,7 +38,6 @@ export function PromoCarousel() {
       containScroll: false,
       duration: 26,
     },
-    // eslint-disable-next-line react-hooks/refs
     [autoplay.current],
   );
 
@@ -86,7 +85,7 @@ export function PromoCarousel() {
   return (
     <section
       aria-label="Promo pilihan"
-      className="overflow-hidden bg-background py-8 sm:py-12"
+      className="overflow-hidden bg-background py-8 lg:py-16"
     >
       <Container className="max-w-none px-0">
         <div
@@ -97,7 +96,7 @@ export function PromoCarousel() {
             {promoItems.map((promo) => (
               <div
                 key={promo.id}
-                className="min-w-0 flex-[0_0_88%] pl-4 sm:flex-[0_0_590px] sm:pl-6 lg:pl-8"
+                className="min-w-0 shrink-0 basis-5/6 pl-4 sm:basis-3/4 sm:pl-6 lg:basis-1/2 lg:pl-8"
               >
                 <PromoCard promo={promo} />
               </div>
@@ -105,7 +104,7 @@ export function PromoCarousel() {
           </div>
         </div>
 
-        <div className="mt-10 flex items-center justify-center gap-8 sm:mt-14">
+        <div className="flex items-center justify-center gap-8 pt-12">
           <IconButton
             label="Promo sebelumnya"
             variant="outline"

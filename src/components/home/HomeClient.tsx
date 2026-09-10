@@ -28,14 +28,12 @@ export function HomeClient() {
 
         <OwnerPromotionSection />
 
-        <SurveyCtaSection
-          onOpenSearch={() => setIsSearchOpen(true)}
-        />
+        <SurveyCtaSection />
 
         <ManagedKosInfoCard />
 
         <section className="border-t border-border bg-secondary py-16">
-          <div className="mx-auto max-w-[1120px] px-4 text-sm text-muted-foreground sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-280 px-4 text-sm text-muted-foreground sm:px-6 lg:px-8">
             Section property listing akan ditambahkan di bawah Managed Kos card.
           </div>
         </section>

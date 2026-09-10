@@ -18,10 +18,9 @@ export function PromoCard({
       href={promo.href}
       aria-label={promo.title}
       className={cn(
-        "group relative block h-[180px] w-full overflow-hidden rounded-md bg-muted outline-none",
+        "group relative block aspect-12/5 w-full overflow-hidden rounded-md bg-muted outline-none",
         "transition-transform duration-200 ease-out",
         "hover:-translate-y-0.5 focus-visible:ring-4 focus-visible:ring-ring/20",
-        "sm:h-[250px]",
         className,
       )}
     >

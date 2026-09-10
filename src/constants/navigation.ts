@@ -18,7 +18,8 @@ export type TopbarNavigationItem = {
 export type CategoryNavigationItem = {
   label: string;
   href: string;
-  icon: IconType;
+  icon?: IconType;
+  image?: string;
   iconClassName: string;
 };
 
@@ -45,13 +46,13 @@ export const categoryNavigationItems: CategoryNavigationItem[] = [
   {
     label: "Kos Singgahsini & Apik",
     href: ROUTES.singgahsini,
-    icon: HiSparkles,
+    image: "/logo/icon-singgahsini.svg",
     iconClassName: "text-[#8E42B8]",
   },
   {
     label: "Kos Andalan",
     href: ROUTES.kosAndalan,
-    icon: HiMiniCheckBadge,
+    image: "/logo/icon-kos-andalan.svg",
     iconClassName: "text-warning",
   },
   {

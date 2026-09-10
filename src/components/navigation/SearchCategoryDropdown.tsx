@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { FiChevronDown } from "react-icons/fi";
 
@@ -48,11 +49,20 @@ export function SearchCategoryDropdown() {
                 "hover:bg-muted focus:bg-muted focus:outline-none",
               )}
             >
-              <Icon
-                size={22}
-                aria-hidden="true"
-                className={cn("shrink-0", item.iconClassName)}
-              />
+              {item.image ? (
+                <Image
+                  src={item.image}
+                  alt={item.label}
+                  width={22}
+                  height={22}
+                />
+              ) : (
+                <Icon
+                  size={22}
+                  aria-hidden="true"
+                  className={cn("shrink-0", item.iconClassName)}
+                />
+              )}
               <span>{item.label}</span>
             </Link>
           );

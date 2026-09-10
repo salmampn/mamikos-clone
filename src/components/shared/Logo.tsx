@@ -24,9 +24,9 @@ export function Logo({
         <Image
           src="/icon.png"
           alt="Mamikos Logo"
-          width={200}
-          height={200}
-          className="h-14 w-auto object-contain"
+          width={100}
+          height={100}
+          className="h-8 mr-2 w-auto object-contain"
         />
 
       <span className="">
