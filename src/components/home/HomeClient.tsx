@@ -19,9 +19,15 @@ import { AboutSection } from "./sections/AboutSection";
 
 export function HomeClient() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
+  const [loginView, setLoginView] = useState<"selection" | "tenant" | "owner">("selection");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [showNavSearch, setShowNavSearch] = useState(false);
   const topSearchRef = useRef<HTMLDivElement>(null);
+
+  const handleOpenLogin = (role?: "tenant" | "owner") => {
+    setLoginView(role || "selection");
+    setIsLoginOpen(true);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +48,7 @@ export function HomeClient() {
   return (
     <>
       <Header
-        onOpenLogin={() => setIsLoginOpen(true)}
+        onOpenLogin={handleOpenLogin}
         showSearch={showNavSearch}
         onOpenSearch={() => setIsSearchOpen(true)}
       />
@@ -97,6 +103,7 @@ export function HomeClient() {
       <LoginModal
         isOpen={isLoginOpen}
         onClose={() => setIsLoginOpen(false)}
+        initialView={loginView}
       />
 
       <LocationSearchOverlay

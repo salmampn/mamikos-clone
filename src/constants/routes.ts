@@ -9,5 +9,7 @@ export const ROUTES = {
   jualBeliProperti: "/jual-beli-properti",
   bantuan: "/bantuan",
   syaratKetentuan: "/syarat-ketentuan",
+  kebijakanPrivasi: "/kebijakan-privasi",
+  blog: "/blog",
   cari: "/cari",
 } as const;

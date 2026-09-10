@@ -90,7 +90,7 @@ export function PromoCarousel() {
       <Container className="max-w-none px-0">
         <div
           ref={emblaRef}
-          className="mx-auto w-full max-w-7xl overflow-hidden px-4 sm:px-6 lg:px-8"
+          className="mx-auto w-full max-w-7xl overflow-hidden px-4 lg:px-8"
         >
           <div className="-ml-4 flex touch-pan-y sm:-ml-6 lg:-ml-8">
             {promoItems.map((promo) => (
@@ -104,7 +104,7 @@ export function PromoCarousel() {
           </div>
         </div>
 
-        <div className="flex items-center justify-center gap-8 pt-12">
+        <div className="flex items-center justify-center gap-8 pt-8 md:pt-12 mb-4 lg:mb-0">
           <IconButton
             label="Promo sebelumnya"
             variant="outline"

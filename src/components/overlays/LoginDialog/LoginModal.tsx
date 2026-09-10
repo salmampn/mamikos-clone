@@ -16,20 +16,23 @@ type LoginView = "selection" | "tenant" | "owner";
 type LoginModalProps = {
   isOpen: boolean;
   onClose: () => void;
+  initialView?: LoginView;
 };
 
 export function LoginModal({
   isOpen,
   onClose,
+  initialView = "selection",
 }: LoginModalProps) {
-  const [view, setView] = useState<LoginView>("selection");
+  const [view, setView] = useState<LoginView>(initialView);
 
   useEffect(() => {
-    if (!isOpen) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (isOpen) {
+      setView(initialView);
+    } else {
       setView("selection");
     }
-  }, [isOpen]);
+  }, [isOpen, initialView]);
 
   return (
     <Dialog

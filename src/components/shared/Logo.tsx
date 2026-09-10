@@ -7,12 +7,17 @@ type LogoProps = {
   className?: string;
   showTagline?: boolean;
   hideText?: boolean;
+  hideTextOnDesktop?: boolean;
 };
 
 export function Logo({
   className,
   hideText = false,
+  hideTextOnDesktop = false,
 }: LogoProps) {
+  const isTextHiddenOnAll = hideText;
+  const isTextHiddenOnDesktopOnly = !hideText && hideTextOnDesktop;
+
   return (
     <Link
       href="/"
@@ -27,11 +32,19 @@ export function Logo({
         alt="Mamikos Logo"
         width={100}
         height={100}
-        className={cn("w-auto object-contain", !hideText && "mr-2", className)}
+        className={cn(
+          "w-auto object-contain",
+          !isTextHiddenOnAll && (isTextHiddenOnDesktopOnly ? "mr-2 lg:mr-0" : "mr-2"),
+          className
+        )}
       />
 
-      {!hideText && (
-        <span className="">
+      {!isTextHiddenOnAll && (
+        <span
+          className={cn(
+            isTextHiddenOnDesktopOnly ? "inline lg:hidden" : "inline"
+          )}
+        >
           <span className={cn("font-black tracking-[-0.04em]", className)}>
             mamikos
           </span>

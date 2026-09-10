@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FiSearch } from "react-icons/fi";
 
 import { AppButton } from "@/components/shared/AppButton";
@@ -5,20 +6,106 @@ import { Container } from "@/components/shared/Container";
 
 type TopSearchSectionProps = {
   onOpenSearch: () => void;
+  onSelectCategory?: (category: "kos" | "apartemen") => void;
 };
 
 export function TopSearchSection({
   onOpenSearch,
+  onSelectCategory,
 }: TopSearchSectionProps) {
   return (
     <section
       aria-labelledby="top-search-heading"
       className="relative overflow-hidden bg-background"
     >
-      <Container className="relative min-h-32 py-16">
-        <div className="relative z-10 hidden max-w-2xl sm:block">
+      {/* 
+        ========================================
+        MOBILE VIEW (Tampil di layar sm kebawah)
+        ========================================
+      */}
+      <div className="block sm:hidden">
+        {/* Sticky Search Bar Header */}
+        <div className="sticky top-0 z-30 bg-background px-4 pt-4 transition-all">
+          <button
+            type="button"
+            onClick={onOpenSearch}
+            className="flex w-full items-center gap-3 rounded-lg border border-border/40 bg-card p-3 shadow-md transition-all active:scale-[0.99]"
+            aria-label="Mau ngekos di mana?"
+          >
+            <FiSearch
+              size={22}
+              aria-hidden="true"
+              className="shrink-0 text-muted-foreground"
+            />
+            <span className="text-sm font-medium text-muted-foreground">
+              Mau ngekos di mana?
+            </span>
+          </button>
+        </div>
+
+        {/* Content Section di bawah Sticky Search Bar */}
+        <div className="px-4 pt-3 pb-6">
+          <div className="mb-4">
+            <span className="text-xs font-semibold text-foreground/80">Hai,</span>
+            <h2 id="top-search-heading" className="text-xl font-bold tracking-tight text-foreground">
+              Lagi cari apa?
+            </h2>
+          </div>
+
+          {/* Cards Options: Kamar Kos & Apartemen */}
+          <div className="grid grid-cols-2 gap-3">
+            <button
+              type="button"
+              onClick={() => onSelectCategory?.("kos")}
+              className="group overflow-hidden rounded-xl border border-border/50 bg-card text-left shadow-sm transition-transform active:scale-95"
+            >
+              <div className="relative h-28 w-full overflow-hidden">
+                <Image
+                  src="/hero/bedroom.jpg"
+                  alt="Kamar Kos"
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="p-3">
+                <span className="text-xs font-semibold text-foreground">
+                  Kamar Kos
+                </span>
+              </div>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => onSelectCategory?.("apartemen")}
+              className="group overflow-hidden rounded-xl border border-border/50 bg-card text-left shadow-sm transition-transform active:scale-95"
+            >
+              <div className="relative h-28 w-full overflow-hidden">
+                <Image
+                  src="/hero/apartment.jpg"
+                  alt="Apartemen"
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="p-3">
+                <span className="text-xs font-semibold text-foreground">
+                  Apartemen
+                </span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* 
+        ========================================
+        DESKTOP VIEW (Tampil di layar sm keatas)
+        ========================================
+      */}
+      <Container className="relative hidden min-h-32 py-16 sm:block">
+        <div className="relative z-10 max-w-2xl">
           <h1
-            id="top-search-heading"
+            id="top-search-heading-desktop"
             className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
           >
             Mau cari kos?

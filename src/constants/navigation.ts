@@ -1,10 +1,6 @@
 import type { IconType } from "react-icons";
-import {
-  FaBed,
-  FaBuilding,
-  FaHouse,
-} from "react-icons/fa6";
-import { HiMiniCheckBadge, HiSparkles } from "react-icons/hi2";
+import { IoBedOutline } from "react-icons/io5";
+import { PiBuildingApartment, PiHouseLine  } from "react-icons/pi";
 import { FiCalendar, FiSmartphone, FiTag } from "react-icons/fi";
 
 import { ROUTES } from "@/constants/routes";
@@ -40,7 +36,7 @@ export const categoryNavigationItems: CategoryNavigationItem[] = [
   {
     label: "Kos",
     href: ROUTES.kos,
-    icon: FaBed,
+    icon: IoBedOutline,
     iconClassName: "text-foreground",
   },
   {
@@ -58,13 +54,13 @@ export const categoryNavigationItems: CategoryNavigationItem[] = [
   {
     label: "Apartemen",
     href: ROUTES.apartemen,
-    icon: FaBuilding,
+    icon: PiBuildingApartment,
     iconClassName: "text-foreground",
   },
   {
     label: "Jual-Beli Properti",
     href: ROUTES.jualBeliProperti,
-    icon: FaHouse,
+    icon: PiHouseLine,
     iconClassName: "text-foreground",
   },
 ];
@@ -85,3 +81,27 @@ export const promotionNavigationItem = {
   href: ROUTES.sewakanKos,
   icon: FiTag,
 };
+
+export const mobileSecondaryNavItems = [
+  {
+    label: "Download Aplikasi",
+    href: ROUTES.downloadApp,
+  },
+  {
+    label: "Pusat Bantuan",
+    href: ROUTES.bantuan,
+  },
+  {
+    label: "Blog Mamikos",
+    href: "https://mamikos.com/info/",
+    isExternal: true,
+  },
+  {
+    label: "Syarat dan Ketentuan",
+    href: ROUTES.syaratKetentuan,
+  },
+  {
+    label: "Kebijakan Privasi",
+    href: ROUTES.kebijakanPrivasi,
+  },
+];
