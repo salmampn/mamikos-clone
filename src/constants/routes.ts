@@ -1,0 +1,13 @@
+export const ROUTES = {
+  home: "/",
+  downloadApp: "/download-app",
+  sewakanKos: "/sewakan-kos",
+  kos: "/kos",
+  singgahsini: "/singgahsini",
+  kosAndalan: "/kos-andalan",
+  apartemen: "/apartemen",
+  jualBeliProperti: "/jual-beli-properti",
+  bantuan: "/bantuan",
+  syaratKetentuan: "/syarat-ketentuan",
+  cari: "/cari",
+} as const;

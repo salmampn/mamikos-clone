@@ -1,26 +1,230 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* =========================================================
+     Core semantic colors
+     ========================================================= */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.235 0 0);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.235 0 0);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.235 0 0);
+
+  /* Mamikos-inspired green */
+  --primary: oklch(0.624 0.162 148);
+  --primary-foreground: oklch(1 0 0);
+  --primary-hover: oklch(0.53 0.142 148);
+  --primary-soft: oklch(0.955 0.04 148);
+
+  --secondary: oklch(0.972 0.004 260);
+  --secondary-foreground: oklch(0.29 0 0);
+
+  --muted: oklch(0.972 0.004 260);
+  --muted-foreground: oklch(0.55 0 0);
+
+  --accent: oklch(0.955 0.04 148);
+  --accent-foreground: oklch(0.45 0.12 148);
+
+  --destructive: oklch(0.577 0.22 27);
+  --destructive-foreground: oklch(1 0 0);
+
+  --warning: oklch(0.79 0.15 78);
+  --warning-foreground: oklch(0.36 0.07 62);
+
+  --border: oklch(0.91 0 0);
+  --input: oklch(0.86 0 0);
+  --ring: oklch(0.624 0.162 148);
+
+  /* =========================================================
+     Brand scale: use only when raw green shades are needed
+     ========================================================= */
+  --brand-50: oklch(0.98 0.018 148);
+  --brand-100: oklch(0.955 0.04 148);
+  --brand-200: oklch(0.905 0.076 148);
+  --brand-300: oklch(0.82 0.12 148);
+  --brand-400: oklch(0.72 0.15 148);
+  --brand-500: oklch(0.66 0.165 148);
+  --brand-600: oklch(0.624 0.162 148);
+  --brand-700: oklch(0.53 0.142 148);
+  --brand-800: oklch(0.45 0.12 148);
+  --brand-900: oklch(0.37 0.09 148);
+
+  /* =========================================================
+     Layout and shape tokens
+     ========================================================= */
+  --radius: 0.5rem;
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 4px);
+  --radius-xl: calc(var(--radius) + 8px);
+
+  --container-max: 70rem;
+
+  /* =========================================================
+     Elevation tokens
+     ========================================================= */
+  --shadow-card: 0 2px 8px rgb(15 23 42 / 0.06);
+  --shadow-card-hover: 0 10px 24px rgb(15 23 42 / 0.1);
+  --shadow-floating: 0 14px 40px rgb(15 23 42 / 0.14);
+  --shadow-focus: 0 0 0 4px rgb(29 185 92 / 0.18);
+
+  /* =========================================================
+     Motion tokens
+     ========================================================= */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 200ms;
+  --duration-slow: 280ms;
+}
+
+.dark {
+  --background: oklch(0.18 0 0);
+  --foreground: oklch(0.97 0 0);
+
+  --card: oklch(0.22 0 0);
+  --card-foreground: oklch(0.97 0 0);
+
+  --popover: oklch(0.22 0 0);
+  --popover-foreground: oklch(0.97 0 0);
+
+  --primary: oklch(0.72 0.15 148);
+  --primary-foreground: oklch(0.18 0 0);
+  --primary-hover: oklch(0.78 0.14 148);
+  --primary-soft: oklch(0.27 0.05 148);
+
+  --secondary: oklch(0.28 0 0);
+  --secondary-foreground: oklch(0.97 0 0);
+
+  --muted: oklch(0.28 0 0);
+  --muted-foreground: oklch(0.7 0 0);
+
+  --accent: oklch(0.27 0.05 148);
+  --accent-foreground: oklch(0.83 0.11 148);
+
+  --destructive: oklch(0.68 0.19 25);
+  --destructive-foreground: oklch(0.18 0 0);
+
+  --warning: oklch(0.82 0.14 78);
+  --warning-foreground: oklch(0.2 0 0);
+
+  --border: oklch(0.34 0 0);
+  --input: oklch(0.39 0 0);
+  --ring: oklch(0.72 0.15 148);
 }
 
 @theme inline {
+  /* Font */
+  --font-sans: var(--font-lato), Arial, sans-serif;
+
+  /* shadcn semantic color utilities */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-soft: var(--primary-soft);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Brand scale utilities: bg-brand-600, text-brand-700, etc. */
+  --color-brand-50: var(--brand-50);
+  --color-brand-100: var(--brand-100);
+  --color-brand-200: var(--brand-200);
+  --color-brand-300: var(--brand-300);
+  --color-brand-400: var(--brand-400);
+  --color-brand-500: var(--brand-500);
+  --color-brand-600: var(--brand-600);
+  --color-brand-700: var(--brand-700);
+  --color-brand-800: var(--brand-800);
+  --color-brand-900: var(--brand-900);
+
+  /* Radius */
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+
+  /* Shadows */
+  --shadow-card: var(--shadow-card);
+  --shadow-card-hover: var(--shadow-card-hover);
+  --shadow-floating: var(--shadow-floating);
+  --shadow-focus: var(--shadow-focus);
+
+  /* Motion */
+  --ease-standard: var(--ease-standard);
+  --duration-fast: var(--duration-fast);
+  --duration-normal: var(--duration-normal);
+  --duration-slow: var(--duration-slow);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-lato), Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
+
+  ::selection {
+    background: var(--primary-soft);
+    color: var(--foreground);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
 }
