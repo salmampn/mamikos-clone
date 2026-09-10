@@ -13,6 +13,8 @@ import { OwnerPromotionSection } from "./sections/OwnerPromotionSection";
 import { propertyCities } from "@/constants/cities";
 import { kosItems } from "@/data/kos";
 import { PropertyListingSection } from "./sections/PropertyListingSection";
+import { PopularAreasSection } from "./sections/PopularAreaSection";
+import { NearbyCampusesSection } from "./sections/NearbyCampusSection";
 
 export function HomeClient() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
@@ -59,6 +61,10 @@ export function HomeClient() {
           defaultCity="Semua Kota"
           viewAllHref="/kos"
         />
+
+        <PopularAreasSection />
+
+        <NearbyCampusesSection />
 
         <section className="border-t border-border bg-secondary py-16">
           <div className="mx-auto max-w-280 px-4 text-sm text-muted-foreground sm:px-6 lg:px-8">

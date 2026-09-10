@@ -5,14 +5,6 @@ export type AreaItem = {
   href: string;
 };
 
-export type CampusItem = {
-  id: string;
-  name: string;
-  city: string;
-  logo: string;
-  href: string;
-};
-
 export type LocationTab = "kampus" | "area" | "stasiun";
 
 export type CityLocationGroup = {
