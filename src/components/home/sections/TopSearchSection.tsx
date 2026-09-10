@@ -24,11 +24,11 @@ export function TopSearchSection({
             Mau cari kos?
           </h1>
 
-          <p className="mt-2 text-sm leading-6 text-muted-foreground sm:text-base">
+          <p className="mt-2 text-lg leading-6 text-muted-foreground font-semibold">
             Dapatkan infonya dan langsung sewa di Mamikos.
           </p>
 
-          <div className="mt-6 flex w-full max-w-[480px] items-center rounded-md bg-card p-1.5 shadow-card">
+          <div className="mt-6 flex w-full max-w-[400px] items-center border rounded-md bg-card p-1.5 shadow-lg">
             <button
               type="button"
               onClick={onOpenSearch}

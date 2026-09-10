@@ -14,23 +14,21 @@ import { cn } from "@/lib/utils";
 export function SearchCategoryDropdown() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <button
-          type="button"
-          className={cn(
-            "inline-flex items-center gap-1 rounded-sm px-2 py-2 text-sm font-bold text-foreground transition-colors",
-            "hover:bg-muted hover:text-primary",
-            "focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/20",
-            "data-[state=open]:bg-muted data-[state=open]:text-primary",
-          )}
-        >
-          Cari Apa?
-          <FiChevronDown
-            size={16}
-            aria-hidden="true"
-            className="transition-transform duration-normal data-[state=open]:rotate-180"
-          />
-        </button>
+      <DropdownMenuTrigger
+        type="button"
+        className={cn(
+          "inline-flex items-center gap-1 rounded-sm px-2 py-2 text-sm font-bold text-foreground transition-colors",
+          "hover:bg-muted hover:text-primary",
+          "focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/20",
+          "data-[state=open]:bg-muted data-[state=open]:text-primary",
+        )}
+      >
+        Cari Apa?
+        <FiChevronDown
+          size={16}
+          aria-hidden="true"
+          className="transition-transform duration-normal data-[state=open]:rotate-180"
+        />
       </DropdownMenuTrigger>
 
       <DropdownMenuContent

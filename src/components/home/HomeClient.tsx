@@ -2,10 +2,11 @@
 
 import { useState } from "react";
 
-import { TopSearchSection } from "@/components/home/TopSearchSection";
+import { TopSearchSection } from "@/components/home/sections/TopSearchSection";
 import { Header } from "@/components/layout/Header";
 import { LocationSearchOverlay } from "@/components/overlays/SearchOverlay/LocationSearchOverlay";
 import { LoginModal } from "@/components/overlays/LoginDialog/LoginModal";
+import { PromoCarousel } from "./PromoCarousel";
 
 export function HomeClient() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
@@ -20,9 +21,11 @@ export function HomeClient() {
           onOpenSearch={() => setIsSearchOpen(true)}
         />
 
+         <PromoCarousel />
+
         <section className="border-t border-border bg-secondary py-16">
           <div className="mx-auto max-w-[1120px] px-4 text-sm text-muted-foreground sm:px-6 lg:px-8">
-            Section berikutnya akan ditambahkan di bawah Top Search Section.
+            Section berikutnya akan ditambahkan di bawah Promo Carousel.
           </div>
         </section>
       </main>
