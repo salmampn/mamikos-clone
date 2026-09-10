@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Lato } from "next/font/google";
 
 import "./globals.css";
+import { Footer } from "@/components/layout/Footer";
 
 const lato = Lato({
   variable: "--font-lato",
@@ -29,6 +30,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-background font-sans text-foreground antialiased">
         {children}
       </body>
+       <Footer />
     </html>
   );
 }

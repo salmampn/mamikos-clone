@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { TopSearchSection } from "@/components/home/sections/TopSearchSection";
 import { Header } from "@/components/layout/Header";
@@ -15,19 +15,44 @@ import { kosItems } from "@/data/kos";
 import { PropertyListingSection } from "./sections/PropertyListingSection";
 import { PopularAreasSection } from "./sections/PopularAreaSection";
 import { NearbyCampusesSection } from "./sections/NearbyCampusSection";
+import { AboutSection } from "./sections/AboutSection";
 
 export function HomeClient() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [showNavSearch, setShowNavSearch] = useState(false);
+  const topSearchRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!topSearchRef.current) return;
+      const rect = topSearchRef.current.getBoundingClientRect();
+      // Total sticky header is ~112px (Topbar 40px + Navbar 72px)
+      setShowNavSearch(rect.bottom <= 112);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
-      <Header onOpenLogin={() => setIsLoginOpen(true)} />
+      <Header
+        onOpenLogin={() => setIsLoginOpen(true)}
+        showSearch={showNavSearch}
+        onOpenSearch={() => setIsSearchOpen(true)}
+      />
 
       <main>
-        <TopSearchSection
-          onOpenSearch={() => setIsSearchOpen(true)}
-        />
+        <div ref={topSearchRef}>
+          <TopSearchSection
+            onOpenSearch={() => setIsSearchOpen(true)}
+          />
+        </div>
 
         <PromoCarousel />
 
@@ -66,11 +91,7 @@ export function HomeClient() {
 
         <NearbyCampusesSection />
 
-        <section className="border-t border-border bg-secondary py-16">
-          <div className="mx-auto max-w-280 px-4 text-sm text-muted-foreground sm:px-6 lg:px-8">
-            Section property listing akan ditambahkan di bawah Managed Kos card.
-          </div>
-        </section>
+        <AboutSection />
       </main>
 
       <LoginModal

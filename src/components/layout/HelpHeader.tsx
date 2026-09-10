@@ -27,7 +27,7 @@ export function HelpHeader() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background shadow-sm">
-      <Container className="flex h-[72px] items-center justify-between gap-6">
+      <Container className="flex h-18 items-center justify-between gap-6">
         <Link
           href="/bantuan"
           aria-label="Pusat Bantuan"
@@ -36,9 +36,9 @@ export function HelpHeader() {
           <Image
                     src="/icon.png"
                     alt="Mamikos Logo"
-                    width={200}
-                    height={200}
-                    className="h-14 w-auto object-contain"
+                    width={100}
+                    height={100}
+                    className="h-8 w-auto object-contain"
                   />
 
           <span className="text-xl font-black tracking-[-0.04em] sm:text-2xl">

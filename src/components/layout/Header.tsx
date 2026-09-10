@@ -3,13 +3,19 @@ import { Topbar } from "@/components/layout/Topbar";
 
 type HeaderProps = {
   onOpenLogin: () => void;
+  showSearch?: boolean;
+  onOpenSearch?: () => void;
 };
 
-export function Header({ onOpenLogin }: HeaderProps) {
+export function Header({ onOpenLogin, showSearch = false, onOpenSearch }: HeaderProps) {
   return (
     <header className="sticky top-0 z-50 w-full bg-background">
       <Topbar />
-      <Navbar onOpenLogin={onOpenLogin} />
+      <Navbar
+        onOpenLogin={onOpenLogin}
+        showSearch={showSearch}
+        onOpenSearch={onOpenSearch}
+      />
     </header>
   );
 }
