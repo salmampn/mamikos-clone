@@ -35,7 +35,7 @@ export function SearchCategoryDropdown() {
       <DropdownMenuContent
         align="start"
         sideOffset={10}
-        className="w-[330px] rounded-lg border-border bg-popover p-2 shadow-floating"
+        className="w-82.5 rounded-lg border-border bg-popover p-2 shadow-floating"
       >
         {categoryNavigationItems.map((item) => {
           const Icon = item.icon;

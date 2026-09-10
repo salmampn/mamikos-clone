@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FiArrowRight } from "react-icons/fi";
+// import { FiArrowRight } from "react-icons/fi";
 
 import { Container } from "@/components/shared/Container";
 
@@ -39,7 +39,7 @@ export function SurveyCtaSection() {
               className="mt-4 inline-flex w-fit items-center gap-2 text-xs sm:text-sm font-bold text-foreground underline decoration-foreground/40 underline-offset-4 transition-colors hover:text-primary hover:decoration-primary focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/20 ml-auto sm:ml-0"
             >
               Baca selengkapnya
-              <FiArrowRight size={16} aria-hidden="true" />
+              {/* <FiArrowRight size={16} aria-hidden="true" /> */}
             </Link>
           </div>
         </div>

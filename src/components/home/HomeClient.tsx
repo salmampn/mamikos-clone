@@ -10,6 +10,9 @@ import { PromoCarousel } from "./sections/PromoCarousel";
 import { ManagedKosInfoCard } from "./sections/ManagedKosInfoCard";
 import { SurveyCtaSection } from "./sections/SurveyCTASection";
 import { OwnerPromotionSection } from "./sections/OwnerPromotionSection";
+import { propertyCities } from "@/constants/cities";
+import { kosItems } from "@/data/kos";
+import { PropertyListingSection } from "./sections/PropertyListingSection";
 
 export function HomeClient() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
@@ -31,6 +34,31 @@ export function HomeClient() {
         <SurveyCtaSection />
 
         <ManagedKosInfoCard />
+
+        <PropertyListingSection
+          title="Promo Ngebut"
+          items={kosItems}
+          cities={propertyCities}
+          defaultCity="Semua Kota"
+          viewAllHref="/kos"
+          showCountdown
+        />
+
+        <PropertyListingSection
+          title="Rekomendasi kos di"
+          items={kosItems.filter((item) => item.city === "Bekasi")}
+          cities={["Bekasi", "Jakarta Selatan", "Depok"] as const}
+          defaultCity="Bekasi"
+          viewAllHref="/cari?lokasi=Bekasi"
+        />
+
+        <PropertyListingSection
+          title="Kos yang lagi promo di"
+          items={kosItems.filter((item) => Boolean(item.promoText))}
+          cities={propertyCities}
+          defaultCity="Semua Kota"
+          viewAllHref="/kos"
+        />
 
         <section className="border-t border-border bg-secondary py-16">
           <div className="mx-auto max-w-280 px-4 text-sm text-muted-foreground sm:px-6 lg:px-8">
