@@ -1,4 +1,25 @@
-import type { CityLocationGroup } from "@/types/location";
+import type {
+  CityLocationGroup,
+  LocationTab,
+} from "@/types/location";
+
+export const searchTabs: Array<{
+  value: LocationTab;
+  label: string;
+}> = [
+  {
+    value: "kampus",
+    label: "Kampus",
+  },
+  {
+    value: "area",
+    label: "Area",
+  },
+  {
+    value: "stasiun",
+    label: "Stasiun & Halte",
+  },
+];
 
 export const popularCampuses = [
   "UGM",
@@ -13,12 +34,14 @@ export const popularCampuses = [
   "UMY",
 ];
 
-export const popularAreas = [
+export const popularAreaSearches = [
   "Tebet Jakarta Selatan",
   "Seturan Yogyakarta",
   "Dago Bandung",
   "Sukolilo Surabaya",
   "Kukusan Depok",
+  "Margonda Depok",
+  "Canggu Bali",
 ];
 
 export const popularStations = [
@@ -27,6 +50,7 @@ export const popularStations = [
   "Stasiun Manggarai",
   "Halte TransJakarta Tosari",
   "Stasiun Bandung",
+  "Stasiun Lempuyangan",
 ];
 
 export const cityLocationGroups: CityLocationGroup[] = [

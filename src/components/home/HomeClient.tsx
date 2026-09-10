@@ -4,7 +4,8 @@ import { useState } from "react";
 
 import { TopSearchSection } from "@/components/home/TopSearchSection";
 import { Header } from "@/components/layout/Header";
-import { LoginModal } from "@/components/overlays/LoginModal";
+import { LocationSearchOverlay } from "@/components/overlays/SearchOverlay/LocationSearchOverlay";
+import { LoginModal } from "@/components/overlays/LoginDialog/LoginModal";
 
 export function HomeClient() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
@@ -31,18 +32,10 @@ export function HomeClient() {
         onClose={() => setIsLoginOpen(false)}
       />
 
-      {isSearchOpen && (
-        <div className="fixed inset-x-4 bottom-4 z-[60] rounded-lg border border-primary/20 bg-primary-soft p-4 text-sm text-brand-800 shadow-floating sm:left-auto sm:right-6 sm:w-[390px]">
-          Location Search Overlay akan dibuat pada tahap berikutnya.
-          <button
-            type="button"
-            onClick={() => setIsSearchOpen(false)}
-            className="ml-3 font-bold text-primary hover:underline"
-          >
-            Tutup
-          </button>
-        </div>
-      )}
+      <LocationSearchOverlay
+        isOpen={isSearchOpen}
+        onClose={() => setIsSearchOpen(false)}
+      />
     </>
   );
 }

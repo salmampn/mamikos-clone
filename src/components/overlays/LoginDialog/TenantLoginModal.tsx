@@ -18,7 +18,7 @@ import {
   FiX,
 } from "react-icons/fi";
 
-import { SocialLoginButton } from "@/components/overlays/SocialLoginButton";
+import { SocialLoginButton } from "@/components/overlays/LoginDialog/SocialLoginButton";
 import { AppButton } from "@/components/shared/AppButton";
 import { DialogTitle } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";

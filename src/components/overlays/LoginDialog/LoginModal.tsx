@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 
-import { LoginSelectionModal } from "@/components/overlays/LoginSelectionModal";
-import { OwnerLoginModal } from "@/components/overlays/OwnerLoginModal";
-import { TenantLoginModal } from "@/components/overlays/TenantLoginModal";
+import { LoginSelectionModal } from "@/components/overlays/LoginDialog/LoginSelectionModal";
+import { OwnerLoginModal } from "@/components/overlays/LoginDialog/OwnerLoginModal";
+import { TenantLoginModal } from "@/components/overlays/LoginDialog/TenantLoginModal";
 import {
   Dialog,
   DialogContent,
@@ -26,6 +26,7 @@ export function LoginModal({
 
   useEffect(() => {
     if (!isOpen) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setView("selection");
     }
   }, [isOpen]);
