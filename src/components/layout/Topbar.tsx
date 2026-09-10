@@ -5,12 +5,13 @@ import {
   topbarNavigationItems,
 } from "@/constants/navigation";
 import { Container } from "@/components/shared/Container";
+import { cn } from "@/lib/utils";
 
-export function Topbar() {
+export function Topbar({ className }: { className?: string }) {
   const PromotionIcon = promotionNavigationItem.icon;
 
   return (
-    <div className="bg-background">
+    <div className={cn("bg-background", className)}>
       <Container className="flex h-10 items-center justify-between">
         <nav
           aria-label="Navigasi utilitas"

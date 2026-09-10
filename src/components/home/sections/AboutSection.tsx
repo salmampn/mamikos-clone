@@ -167,7 +167,7 @@ export function AboutSection() {
             <div className="mt-6 space-y-5">
               {features.map((feature) => (
                 <div key={feature.label} className="flex gap-4">
-                  <span className="w-4 shrink-0 text-sm font-semibold text-foreground">
+                  <span className="w-4 shrink-0 text-base font-semibold text-foreground">
                     {feature.label}.
                   </span>
 

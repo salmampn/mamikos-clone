@@ -25,7 +25,7 @@ export function Footer() {
                 alt="Mamikos"
                 width={136}
                 height={32}
-                className="h-8 w-auto object-contain"
+                className="h-10 w-auto object-contain"
                 priority
               />
             </Link>
@@ -230,9 +230,9 @@ export function Footer() {
           <Image
             src="/logo/iso-certificate-v2.svg"
             alt="ISO Certificate"
-            width={50}
-            height={50}
-            className="h-10 w-auto"
+            width={80}
+            height={80}
+            className="h-12 w-auto"
           />
           <p className="text-sm text-foreground">
             © {currentYear} Mamikos. All rights reserved

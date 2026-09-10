@@ -10,7 +10,7 @@ type HeaderProps = {
 export function Header({ onOpenLogin, showSearch = false, onOpenSearch }: HeaderProps) {
   return (
     <header className="sticky top-0 z-50 w-full bg-background">
-      <Topbar />
+      <Topbar className="hidden lg:block"/>
       <Navbar
         onOpenLogin={onOpenLogin}
         showSearch={showSearch}
