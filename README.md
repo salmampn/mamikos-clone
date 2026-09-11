@@ -27,7 +27,7 @@ Responsive frontend clone of the Mamikos landing page, created for the **Mamikos
 - [React](https://react.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [shadcn/ui](https://ui.shadcn.com/) and [Radix UI](https://www.radix-ui.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
 - [Embla Carousel](https://www.embla-carousel.com/)
 - [React Icons](https://react-icons.github.io/react-icons/)
 
