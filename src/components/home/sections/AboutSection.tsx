@@ -102,86 +102,205 @@ const features: FeatureItem[] = [
 
 export function AboutSection() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobileAboutOpen, setIsMobileAboutOpen] = useState(false);
+  const [isMobileFeaturesOpen, setIsMobileFeaturesOpen] = useState(false);
 
   return (
     <section
       aria-labelledby="about-heading"
-      className="border-t border-border bg-secondary py-8"
+      className="border-t border-border bg-background py-6 sm:bg-secondary sm:py-8"
     >
       <Container>
-        {/* Centered intro block */}
-        <div className="mx-auto max-w-6xl text-center">
-          <h2
-            id="about-heading"
-            className="text-xl font-bold text-foreground"
-          >
-            Mamikos - Aplikasi Anak Kos No. 1 di Indonesia
+        {/* ========================================
+            MOBILE VIEW (sm kebawah)
+            ======================================== */}
+        <div className="sm:hidden">
+          <h2 className="text-center text-lg font-bold leading-snug text-primary">
+            Mamikos - Aplikasi Anak Kos No. 1
+            <br />
+            di Indonesia
           </h2>
 
-          <p className="mt-4 text-base leading-6 text-foreground sm:leading-7 text-left">
-            Mamikos memanfaatkan teknologi untuk berkembang dari aplikasi cari
-            kos menjadi aplikasi yang memudahkan calon anak kos untuk booking
-            properti kos dan juga melakukan pembayaran kos. Saat ini kami
-            memiliki lebih dari 2 juta kamar kos yang tersebar di lebih dari 140
-            kota di seluruh Indonesia. Mamikos juga menyediakan layanan
-            manajemen properti, bernama Singgahsini dan Apik, untuk menjawab
-            kebutuhan calon penghuni yang menginginkan kos eksklusif atau kos
-            murah. Mamikos berusaha untuk bisa terus menyajikan daftar rumah kos
-            dengan data ketersediaan kamar yang akurat, fasilitas kos terpercinci,
-            dilengkapi dengan foto serta detail harga kos, dan kemudahan survei via
-            fitur virtual tour agar calon penghuni mendapatkan kenyamanan dalam
-            proses pencarian dan booking kos.
-          </p>
+          <div className="mt-5">
+            {/* Item 1: Tentang Mamikos */}
+            <div className="border-b border-border">
+              <button
+                type="button"
+                aria-expanded={isMobileAboutOpen}
+                aria-controls="mobile-about-panel"
+                onClick={() => setIsMobileAboutOpen((prev) => !prev)}
+                className="flex w-full items-center justify-between py-3.5 text-left outline-none transition-colors"
+              >
+                <span className="text-base font-bold text-foreground">
+                  Tentang Mamikos
+                </span>
+
+                <FiChevronDown
+                  size={20}
+                  aria-hidden="true"
+                  className={cn(
+                    "shrink-0 text-foreground transition-transform duration-200",
+                    isMobileAboutOpen && "rotate-180",
+                  )}
+                />
+              </button>
+
+              <div
+                id="mobile-about-panel"
+                className={cn(
+                  "overflow-hidden transition-all duration-300 ease-in-out",
+                  isMobileAboutOpen ? "max-h-[1000px] opacity-100 pb-4" : "max-h-0 opacity-0",
+                )}
+              >
+                <p className="text-sm leading-6 text-foreground">
+                  Mamikos memanfaatkan teknologi untuk berkembang dari aplikasi cari
+                  kos menjadi aplikasi yang memudahkan calon anak kos untuk booking
+                  properti kos dan juga melakukan pembayaran kos. Saat ini kami
+                  memiliki lebih dari 2 juta kamar kos yang tersebar di lebih dari 140
+                  kota di seluruh Indonesia. Mamikos juga menyediakan layanan
+                  manajemen properti, bernama Singgahsini dan Apik, untuk menjawab
+                  kebutuhan calon penghuni yang menginginkan kos eksklusif atau kos
+                  murah. Mamikos berusaha untuk bisa terus menyajikan daftar rumah kos
+                  dengan data ketersediaan kamar yang akurat, fasilitas kos terpercinci,
+                  dilengkapi dengan foto serta detail harga kos, dan kemudahan survei via
+                  fitur virtual tour agar calon penghuni mendapatkan kenyamanan dalam
+                  proses pencarian dan booking kos.
+                </p>
+              </div>
+            </div>
+
+            {/* Item 2: Fitur yang dapat dimanfaatkan di Mamikos */}
+            <div className="border-b border-border">
+              <button
+                type="button"
+                aria-expanded={isMobileFeaturesOpen}
+                aria-controls="mobile-features-panel"
+                onClick={() => setIsMobileFeaturesOpen((prev) => !prev)}
+                className="flex w-full items-center justify-between py-3.5 text-left outline-none transition-colors"
+              >
+                <span className="text-base font-bold text-foreground">
+                  Fitur yang dapat dimanfaatkan di Mamikos
+                </span>
+
+                <FiChevronDown
+                  size={20}
+                  aria-hidden="true"
+                  className={cn(
+                    "shrink-0 text-foreground transition-transform duration-200",
+                    isMobileFeaturesOpen && "rotate-180",
+                  )}
+                />
+              </button>
+
+              <div
+                id="mobile-features-panel"
+                className={cn(
+                  "overflow-hidden transition-all duration-300 ease-in-out",
+                  isMobileFeaturesOpen ? "max-h-[9999px] opacity-100 pb-4" : "max-h-0 opacity-0",
+                )}
+              >
+                <div className="space-y-4 pt-1">
+                  {features.map((feature) => (
+                    <div key={feature.label} className="flex gap-3">
+                      <span className="w-4 shrink-0 text-sm font-semibold text-foreground">
+                        {feature.label}.
+                      </span>
+
+                      <div>
+                        <h3 className="text-sm font-bold text-foreground">
+                          {feature.title}
+                        </h3>
+
+                        <p className="mt-1 text-sm leading-6 text-foreground">
+                          {feature.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Collapsible feature list */}
-        <div className="mx-auto mt-8 max-w-6xl">
-          <div className="flex justify-center">
-            <button
-              type="button"
-              aria-expanded={isOpen}
-              aria-controls="about-features-panel"
-              onClick={() => setIsOpen((prev) => !prev)}
-              className="inline-flex items-center gap-1.5 text-xl font-semibold text-foreground outline-none transition-colors hover:text-primary focus-visible:rounded-sm focus-visible:ring-4 focus-visible:ring-ring/20"
+        {/* ========================================
+            TABLET & DESKTOP VIEW (sm keatas)
+            ======================================== */}
+        <div className="hidden sm:block">
+          {/* Centered intro block */}
+          <div className="mx-auto max-w-6xl text-center">
+            <h2
+              id="about-heading"
+              className="text-xl font-bold text-foreground"
             >
-              Fitur yang dapat dimanfaatkan di Mamikos
+              Mamikos - Aplikasi Anak Kos No. 1 di Indonesia
+            </h2>
 
-              <FiChevronDown
-                size={18}
-                aria-hidden="true"
-                className={cn(
-                  "shrink-0 transition-transform duration-300",
-                  isOpen && "rotate-180",
-                )}
-              />
-            </button>
+            <p className="mt-4 text-base leading-6 text-foreground sm:leading-7 text-left">
+              Mamikos memanfaatkan teknologi untuk berkembang dari aplikasi cari
+              kos menjadi aplikasi yang memudahkan calon anak kos untuk booking
+              properti kos dan juga melakukan pembayaran kos. Saat ini kami
+              memiliki lebih dari 2 juta kamar kos yang tersebar di lebih dari 140
+              kota di seluruh Indonesia. Mamikos juga menyediakan layanan
+              manajemen properti, bernama Singgahsini dan Apik, untuk menjawab
+              kebutuhan calon penghuni yang menginginkan kos eksklusif atau kos
+              murah. Mamikos berusaha untuk bisa terus menyajikan daftar rumah kos
+              dengan data ketersediaan kamar yang akurat, fasilitas kos terpercinci,
+              dilengkapi dengan foto serta detail harga kos, dan kemudahan survei via
+              fitur virtual tour agar calon penghuni mendapatkan kenyamanan dalam
+              proses pencarian dan booking kos.
+            </p>
           </div>
 
-          <div
-            id="about-features-panel"
-            className={cn(
-              "overflow-hidden transition-all duration-500 ease-in-out",
-              isOpen ? "max-h-[9999px] opacity-100" : "max-h-0 opacity-0",
-            )}
-          >
-            <div className="mt-6 space-y-5">
-              {features.map((feature) => (
-                <div key={feature.label} className="flex gap-4">
-                  <span className="w-4 shrink-0 text-base font-semibold text-foreground">
-                    {feature.label}.
-                  </span>
+          {/* Collapsible feature list */}
+          <div className="mx-auto mt-8 max-w-6xl">
+            <div className="flex justify-center">
+              <button
+                type="button"
+                aria-expanded={isOpen}
+                aria-controls="about-features-panel"
+                onClick={() => setIsOpen((prev) => !prev)}
+                className="inline-flex items-center gap-1.5 text-xl font-semibold text-foreground outline-none transition-colors hover:text-primary focus-visible:rounded-sm focus-visible:ring-4 focus-visible:ring-ring/20"
+              >
+                Fitur yang dapat dimanfaatkan di Mamikos
 
-                  <div>
-                    <h3 className="text-base font-bold text-foreground">
-                      {feature.title}
-                    </h3>
+                <FiChevronDown
+                  size={18}
+                  aria-hidden="true"
+                  className={cn(
+                    "shrink-0 transition-transform duration-300",
+                    isOpen && "rotate-180",
+                  )}
+                />
+              </button>
+            </div>
 
-                    <p className="mt-1 text-base leading-6 text-foreground">
-                      {feature.description}
-                    </p>
+            <div
+              id="about-features-panel"
+              className={cn(
+                "overflow-hidden transition-all duration-500 ease-in-out",
+                isOpen ? "max-h-[9999px] opacity-100" : "max-h-0 opacity-0",
+              )}
+            >
+              <div className="mt-6 space-y-5">
+                {features.map((feature) => (
+                  <div key={feature.label} className="flex gap-4">
+                    <span className="w-4 shrink-0 text-base font-semibold text-foreground">
+                      {feature.label}.
+                    </span>
+
+                    <div>
+                      <h3 className="text-base font-bold text-foreground">
+                        {feature.title}
+                      </h3>
+
+                      <p className="mt-1 text-base leading-6 text-foreground">
+                        {feature.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>

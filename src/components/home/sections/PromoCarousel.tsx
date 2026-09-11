@@ -38,6 +38,7 @@ export function PromoCarousel() {
       containScroll: false,
       duration: 26,
     },
+    // eslint-disable-next-line react-hooks/refs
     [autoplay.current],
   );
 
@@ -87,31 +88,44 @@ export function PromoCarousel() {
       aria-label="Promo pilihan"
       className="overflow-hidden bg-background py-8 lg:py-16"
     >
-      <Container className="max-w-none px-0">
-        <div
-          ref={emblaRef}
-          className="mx-auto w-full max-w-7xl overflow-hidden px-4 lg:px-8"
-        >
-          <div className="-ml-4 flex touch-pan-y sm:-ml-6 lg:-ml-8">
-            {promoItems.map((promo) => (
+      <div
+        ref={emblaRef}
+        className="w-full overflow-hidden lg:mx-auto lg:max-w-7xl lg:px-8"
+      >
+        <div className="-ml-4 flex touch-pan-y sm:-ml-6 lg:-ml-8">
+          {promoItems.map((promo, index) => {
+            const isActive = selectedIndex === index;
+
+            return (
               <div
                 key={promo.id}
                 className="min-w-0 shrink-0 basis-5/6 pl-4 sm:basis-3/4 sm:pl-6 lg:basis-1/2 lg:pl-8"
               >
-                <PromoCard promo={promo} />
+                <div
+                  className={cn(
+                    "origin-center transition-all duration-300 ease-out",
+                    isActive
+                      ? "scale-105 opacity-100"
+                      : "scale-95 opacity-90",
+                  )}
+                >
+                  <PromoCard promo={promo} />
+                </div>
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
+      </div>
 
-        <div className="flex items-center justify-center gap-8 pt-8 md:pt-12 mb-4 lg:mb-0">
+      <Container>
+        <div className="mb-4 flex items-center justify-center gap-8 pt-8 md:pt-12 lg:mb-0">
           <IconButton
             label="Promo sebelumnya"
             variant="outline"
             size="sm"
             onClick={scrollPrevious}
             disabled={promoItems.length < 2}
-            className="size-10 border-border bg-background text-foreground shadow-card hover:border-border hover:bg-muted hover:text-foreground disabled:cursor-not-allowed disabled:opacity-40"
+            className="size-10 border-border bg-background text-foreground shadow-card transition-colors hover:border-border hover:bg-muted hover:text-foreground disabled:cursor-not-allowed disabled:opacity-40"
           >
             <FiChevronLeft
               size={23}
@@ -122,7 +136,7 @@ export function PromoCarousel() {
 
           <Link
             href="/kos"
-            className="text-sm font-bold text-foreground transition-colors hover:text-primary focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/20"
+            className="text-sm font-bold text-foreground outline-none transition-colors hover:text-primary focus-visible:rounded-sm focus-visible:ring-4 focus-visible:ring-ring/20"
           >
             Lihat semua promo
           </Link>
@@ -133,7 +147,7 @@ export function PromoCarousel() {
             size="sm"
             onClick={scrollNext}
             disabled={promoItems.length < 2}
-            className="size-10 border-border bg-background text-foreground shadow-card hover:border-border hover:bg-muted hover:text-foreground disabled:cursor-not-allowed disabled:opacity-40"
+            className="size-10 border-border bg-background text-foreground shadow-card transition-colors hover:border-border hover:bg-muted hover:text-foreground disabled:cursor-not-allowed disabled:opacity-40"
           >
             <FiChevronRight
               size={23}
@@ -161,14 +175,17 @@ export function PromoCarousel() {
                   "rounded-full transition-all duration-200",
                   isActive
                     ? "h-1.5 w-5 bg-primary"
-                    : "size-1.5 bg-border hover:bg-muted-foreground",
+                    : "size-1.5 rounded-full bg-border hover:bg-muted-foreground",
                 )}
               />
             );
           })}
         </div>
 
-        <p className="sr-only" aria-live="polite">
+        <p
+          className="sr-only"
+          aria-live="polite"
+        >
           Promo aktif: {promoItems[selectedIndex]?.title}
         </p>
       </Container>

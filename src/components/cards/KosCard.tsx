@@ -38,29 +38,28 @@ export function KosCard({
             className="object-cover transition-transform duration-200 ease-out group-hover:scale-[1.03]"
           />
 
-          <span className="absolute left-0 top-0 grid size-6 place-items-center rounded-br-md bg-card text-primary shadow-sm">
-            <span className="size-2 rounded-full bg-primary" />
+          <span className="absolute left-0 top-0 grid size-6 place-items-center rounded-br-md bg-card p-1 shadow-sm">
+            <Image
+              src="/logo/icon-singgahsini.svg"
+              alt="Singgahsini"
+              width={14}
+              height={14}
+              className="size-3.5 object-contain"
+            />
           </span>
         </div>
 
         <div className="pt-2">
           <div className="flex min-h-5 flex-wrap items-center gap-x-2 gap-y-1">
-            <span className="rounded-sm border border-border bg-card px-2 py-2 text-xs font-bold leading-none text-foreground">
+            <span className="rounded-sm border border-border bg-card px-1.5 py-1 text-xs font-bold leading-none text-foreground">
               {item.gender}
             </span>
 
-            <span className="inline-flex items-center gap-1 text-[11px] font-bold text-foreground">
-              <FiStar
-                size={13}
-                aria-hidden="true"
-                className="fill-primary text-primary"
-              />
-              {item.rating.toFixed(1)}
-            </span>
-
-            <span className="text-[11px] italic text-destructive">
-              Sisa {item.availableRooms} kamar
-            </span>
+            {item.availableRooms !== undefined && item.availableRooms > 0 && (
+              <span className="text-[11px] italic text-destructive">
+                Sisa {item.availableRooms} kamar
+              </span>
+            )}
           </div>
 
           <h3 className="mt-2 line-clamp-2 text-sm font-normal leading-5 text-foreground transition-colors group-hover:text-primary">
@@ -75,7 +74,18 @@ export function KosCard({
             {item.facilities.join(" · ")}
           </p>
 
-          <div className="mt-2 min-h-10">
+          {item.rating > 0 && (
+            <div className="mt-1.5 flex items-center gap-1 text-xs font-bold text-foreground">
+              <FiStar
+                size={13}
+                aria-hidden="true"
+                className="fill-primary text-primary"
+              />
+              <span>{item.rating.toFixed(1)}</span>
+            </div>
+          )}
+
+          <div className="mt-1.5 min-h-10">
             {item.promoText && (
               <p className="inline-flex items-center gap-1 text-xs font-bold text-destructive">
                 <FiZap size={13} aria-hidden="true" />
