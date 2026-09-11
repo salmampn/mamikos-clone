@@ -27,7 +27,7 @@ export function PagePlaceholder({
             {description}
           </p>
 
-          <AppButton asChild variant="outline" className="mt-7">
+          <AppButton variant="outline" className="mt-7">
             <Link href={ROUTES.home}>Kembali ke halaman utama</Link>
           </AppButton>
         </section>

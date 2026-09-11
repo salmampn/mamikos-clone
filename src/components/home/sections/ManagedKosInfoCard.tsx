@@ -18,7 +18,6 @@ export function ManagedKosInfoCard() {
           </h2>
 
           <AppButton
-            asChild
             variant="outline"
             size="sm"
             className="h-8 border-white bg-transparent px-3 text-xs font-semibold text-white hover:bg-white/10 hover:text-white sm:h-9 sm:px-4 sm:text-sm"

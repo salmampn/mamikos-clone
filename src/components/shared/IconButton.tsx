@@ -3,7 +3,7 @@ import type { ButtonHTMLAttributes, ReactNode } from "react";
 import { AppButton } from "@/components/shared/AppButton";
 import { cn } from "@/lib/utils";
 
-type IconButtonVariant = "ghost" | "outline" | "primary";
+type IconButtonVariant = "ghost" | "outline" | "default";
 
 type IconButtonProps = Omit<
   ButtonHTMLAttributes<HTMLButtonElement>,

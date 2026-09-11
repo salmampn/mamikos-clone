@@ -230,7 +230,7 @@ export function TenantLoginModal({
 
         <AppButton
           type="submit"
-          variant="primary"
+          variant="default"
           size="lg"
           disabled={!isLoginEnabled}
           className="mt-1 w-full disabled:bg-muted disabled:text-muted-foreground disabled:opacity-100"
