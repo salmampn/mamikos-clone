@@ -39,7 +39,6 @@ export function OwnerPromotionSection() {
 
               <div className="mt-4">
                 <AppButton
-                  asChild
                   variant="outline"
                   size="lg"
                   className="h-8 px-2 md:px-4 text-xs md:text-base rounded-sm md:h-12"

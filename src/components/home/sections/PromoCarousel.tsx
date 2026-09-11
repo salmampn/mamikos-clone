@@ -14,7 +14,7 @@ import {
   FiChevronRight,
 } from "react-icons/fi";
 
-import { PromoCard } from "@/components/cards/PromoCard";
+import { PromoCard } from "@/components/home/cards/PromoCard";
 import { Container } from "@/components/shared/Container";
 import { IconButton } from "@/components/shared/IconButton";
 import { promoItems } from "@/data/promos";

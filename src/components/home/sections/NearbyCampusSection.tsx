@@ -1,5 +1,5 @@
-import { CampusCard } from "@/components/cards/CampusCard";
-import { ViewAllCard } from "@/components/cards/ViewAllCard";
+import { CampusCard } from "@/components/home/cards/CampusCard";
+import { ViewAllCard } from "@/components/home/cards/ViewAllCard";
 import { Container } from "@/components/shared/Container";
 import { nearbyCampusItems } from "@/data/campus";
 

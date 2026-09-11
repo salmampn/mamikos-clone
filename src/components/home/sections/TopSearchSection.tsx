@@ -135,7 +135,7 @@ export function TopSearchSection({
 
             <AppButton
               type="button"
-              variant="search"
+              variant="default"
               size="md"
               onClick={onOpenSearch}
               className="h-10 shrink-0 rounded-sm px-5 text-sm"

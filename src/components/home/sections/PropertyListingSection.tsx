@@ -11,7 +11,7 @@ import { ListingEmptyState } from "@/components/home/components/property/Listing
 import { PropertyListingHeader } from "@/components/home/components/property/PropertyListingHeader";
 import { usePropertyListingCarousel } from "@/components/home/components/property/usePropertyListingCarousel";
 
-import { KosCard } from "@/components/cards/KosCard";
+import { KosCard } from "@/components/home/cards/KosCard";
 import { Container } from "@/components/shared/Container";
 import { chunkArray } from "@/lib/array";
 import type { KosItem } from "@/types/kos";

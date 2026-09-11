@@ -1,5 +1,5 @@
-import { AreaCard } from "@/components/cards/AreaCard";
-import { ViewAllCard } from "@/components/cards/ViewAllCard";
+import { AreaCard } from "@/components/home/cards/AreaCard";
+import { ViewAllCard } from "@/components/home/cards/ViewAllCard";
 import { Container } from "@/components/shared/Container";
 import { popularAreaCards } from "@/data/areas";
 
