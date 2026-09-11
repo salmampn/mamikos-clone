@@ -8,7 +8,7 @@ Responsive frontend clone of the Mamikos landing page, created for the **Mamikos
 
 - Technical-test brief: [mamitech/Frontend-Engineer-Technical-Test-AI-Assisted-Build](https://github.com/mamitech/Frontend-Engineer-Technical-Test-AI-Assisted-Build)
 - Repository: [salmampn/mamikos-clone](https://github.com/salmampn/mamikos-clone)
-- Live demo: _Add the Vercel deployment URL here_
+- Live demo: [salma-mamikos-clone](https://salma-mamikos-clone.vercel.app/)
 
 ## Features
 
