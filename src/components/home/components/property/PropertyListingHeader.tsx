@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CountdownBadge } from "./CountdownBadge";
 import { ListingActions } from "./ListingActions";
 
-import { PropertyCityDropdown } from "@/components/home/components/PropertyCityDropdown";
+import { PropertyCityDropdown } from "@/components/home/components/property/PropertyCityDropdown";
 
 type PropertyListingHeaderProps = {
   title: string;

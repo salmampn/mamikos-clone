@@ -7,9 +7,9 @@ import {
 } from "react";
 import Link from "next/link";
 
-import { ListingEmptyState } from "@/components/home/components/ListingEmptyState";
-import { PropertyListingHeader } from "@/components/home/components/PropertyListingHeader";
-import { usePropertyListingCarousel } from "@/components/home/components/usePropertyListingCarousel";
+import { ListingEmptyState } from "@/components/home/components/property/ListingEmptyState";
+import { PropertyListingHeader } from "@/components/home/components/property/PropertyListingHeader";
+import { usePropertyListingCarousel } from "@/components/home/components/property/usePropertyListingCarousel";
 
 import { KosCard } from "@/components/cards/KosCard";
 import { Container } from "@/components/shared/Container";

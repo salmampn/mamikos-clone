@@ -28,7 +28,7 @@ export function Navbar({
     <div className="border-b border-border bg-background">
       <Container className="flex h-18 items-center justify-between gap-4">
         <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
-          <Logo className="h-8 text-xl" hideTextOnDesktop={showSearch} />
+          <Logo className="h-8 text-xl" hideTextOnDesktop={showSearch}/>
 
           {showSearch && (
             <div

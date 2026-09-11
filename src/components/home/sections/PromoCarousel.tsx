@@ -118,51 +118,13 @@ export function PromoCarousel() {
       </div>
 
       <Container>
-        <div className="mb-4 flex items-center justify-center gap-8 pt-8 md:pt-12 lg:mb-0">
-          <IconButton
-            label="Promo sebelumnya"
-            variant="outline"
-            size="sm"
-            onClick={scrollPrevious}
-            disabled={promoItems.length < 2}
-            className="size-10 border-border bg-background text-foreground shadow-card transition-colors hover:border-border hover:bg-muted hover:text-foreground disabled:cursor-not-allowed disabled:opacity-40"
+        <div className="flex flex-col items-center justify-center gap-8 pt-8 md:pt-12 md:mb-4 lg:mb-0">
+          <div
+            aria-label={`Promo ${selectedIndex + 1} dari ${promoItems.length}`}
+            className="flex justify-center gap-1.5 sm:hidden"
           >
-            <FiChevronLeft
-              size={23}
-              strokeWidth={1.5}
-              aria-hidden="true"
-            />
-          </IconButton>
-
-          <Link
-            href="/kos"
-            className="text-sm font-bold text-foreground outline-none transition-colors hover:text-primary focus-visible:rounded-sm focus-visible:ring-4 focus-visible:ring-ring/20"
-          >
-            Lihat semua promo
-          </Link>
-
-          <IconButton
-            label="Promo selanjutnya"
-            variant="outline"
-            size="sm"
-            onClick={scrollNext}
-            disabled={promoItems.length < 2}
-            className="size-10 border-border bg-background text-foreground shadow-card transition-colors hover:border-border hover:bg-muted hover:text-foreground disabled:cursor-not-allowed disabled:opacity-40"
-          >
-            <FiChevronRight
-              size={23}
-              strokeWidth={1.5}
-              aria-hidden="true"
-            />
-          </IconButton>
-        </div>
-
-        <div
-          aria-label={`Promo ${selectedIndex + 1} dari ${promoItems.length}`}
-          className="mt-5 flex justify-center gap-1.5 sm:hidden"
-        >
-          {promoItems.map((promo, index) => {
-            const isActive = selectedIndex === index;
+            {promoItems.map((promo, index) => {
+              const isActive = selectedIndex === index;
 
             return (
               <button
@@ -179,7 +141,47 @@ export function PromoCarousel() {
                 )}
               />
             );
-          })}
+            })}
+          </div>
+
+          <div className="flex items-center justify-center gap-2">
+            <IconButton
+              label="Promo sebelumnya"
+              variant="outline"
+              size="sm"
+              onClick={scrollPrevious}
+              disabled={promoItems.length < 2}
+              className="size-10 border-border bg-background text-foreground shadow-card transition-colors hover:border-border hover:bg-muted hover:text-foreground disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              <FiChevronLeft
+                size={23}
+                strokeWidth={1.5}
+                aria-hidden="true"
+              />
+            </IconButton>
+
+            <Link
+              href="/kos"
+              className="text-sm font-bold text-foreground outline-none transition-colors hover:text-primary focus-visible:rounded-sm focus-visible:ring-4 focus-visible:ring-ring/20"
+            >
+              Lihat semua promo
+            </Link>
+
+            <IconButton
+              label="Promo selanjutnya"
+              variant="outline"
+              size="sm"
+              onClick={scrollNext}
+              disabled={promoItems.length < 2}
+              className="size-10 border-border bg-background text-foreground shadow-card transition-colors hover:border-border hover:bg-muted hover:text-foreground disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              <FiChevronRight
+                size={23}
+                strokeWidth={1.5}
+                aria-hidden="true"
+              />
+            </IconButton>
+          </div>
         </div>
 
         <p

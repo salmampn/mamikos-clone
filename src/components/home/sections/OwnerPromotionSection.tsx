@@ -42,7 +42,7 @@ export function OwnerPromotionSection() {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="h-10 px-2 text-sm rounded-sm md:h-12"
+                  className="h-8 px-2 md:px-4 text-xs md:text-base rounded-sm md:h-12"
                 >
                   <Link href="/sewakan-kos">
                     Pelajari lebih lanjut
