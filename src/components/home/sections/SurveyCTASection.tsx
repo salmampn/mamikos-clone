@@ -10,7 +10,7 @@ export function SurveyCtaSection() {
       className="bg-background py-6 sm:py-8"
     >
       <Container>
-        <div className="relative w-full sm:w-fit overflow-hidden rounded-xl border border-border bg-card px-5 py-5 shadow-lg sm:px-8 sm:py-6">
+        <div className="relative w-fit md:w-full overflow-hidden rounded-xl border border-border bg-card px-5 py-5 shadow-lg sm:px-8 sm:py-6">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute -bottom-16 sm:-bottom-10 -left-8 h-28 w-40 opacity-70 sm:left-auto sm:-right-8"
