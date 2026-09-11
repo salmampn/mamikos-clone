@@ -10,6 +10,21 @@ Responsive frontend clone of the Mamikos landing page, created for the **Mamikos
 - Repository: [salmampn/mamikos-clone](https://github.com/salmampn/mamikos-clone)
 - Live demo: [salma-mamikos-clone](https://salma-mamikos-clone.vercel.app/)
 
+## My development workflow included:
+
+- Translating the provided visual reference into reusable frontend sections
+- Building the layout incrementally, starting from the page structure and core content
+- Using AI assistance to accelerate implementation and ideation, while manually reviewing, adjusting, and validating the generated output
+- Checking responsive behavior and refining spacing, typography, and visual hierarchy across screen sizes
+
+## Key Decisions
+
+- **Component-based structure:** The interface is split into reusable sections to make the codebase easier to maintain and iterate on.
+- **Responsive-first styling:** Layouts, spacing, and typography are designed to adapt across different viewport sizes.
+- **Reusable styling tokens:** Tailwind utility classes are used to keep styling consistent and speed up iteration.
+- **Practical scope:** The implementation prioritizes a polished frontend experience and clear visual hierarchy within the time-boxed challenge.
+- **Manual verification:** AI-generated suggestions were treated as a starting point; the final code and UI decisions were reviewed and adjusted manually.
+  
 ## Features
 
 - Responsive navigation with desktop navbar and mobile/tablet hamburger drawer.
@@ -30,6 +45,12 @@ Responsive frontend clone of the Mamikos landing page, created for the **Mamikos
 - [shadcn/ui](https://ui.shadcn.com/)
 - [Embla Carousel](https://www.embla-carousel.com/)
 - [React Icons](https://react-icons.github.io/react-icons/)
+
+## Tools Used
+
+- **ESLint** for code-quality checks
+- **GitHub** for source control and submission
+- **AI tools** to assist with implementation, debugging, and iterative UI refinement
 
 ## Getting Started
 
